@@ -1,4 +1,4 @@
-# 3D Kitti 라벨링 GUI 툴
+# 3D Kitti 라벨링 GUI 툴 v3
 
 ## v2에서 수정사항 및 기능
 

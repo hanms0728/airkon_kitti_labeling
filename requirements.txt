@@ -1,0 +1,5 @@
+numpy>=1.18
+opencv-python>=4.2
+Pillow>=7.0
+pyyaml>=5.3
+pyquaternion>=0.9

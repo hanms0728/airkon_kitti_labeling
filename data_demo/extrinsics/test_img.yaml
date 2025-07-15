@@ -1,0 +1,10 @@
+transform:
+  translation:
+    x: 0
+    y: 0
+    z: 0.975
+  rotation:
+    w: 0.6124
+    x: 0.3536
+    y: 0.3536
+    z: 0.6124

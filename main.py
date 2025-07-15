@@ -29,6 +29,8 @@ class LabelTool:
         self.select_count = 0
         self.canvas.bind("<Button-1>", self.on_canvas_click)
         self.canvas.bind("<Button-2>", self.on_canvas_click)
+        self.canvas.bind("<Button-3>", self.on_canvas_click)
+
 
         self.load_button = tk.Button(self.left_frame, text="Load Image", command=self.load_image)
         self.load_button.pack()
@@ -314,7 +316,7 @@ class LabelTool:
         if event.num == 1:  # 마우스 왼쪽 버튼
             self.x1_var.set(x)
             self.y1_var.set(y)
-        elif event.num == 2:  # 마우스 오른쪽 버튼
+        elif event.num == 2 or event.num == 3:  # 마우스 오른쪽 버튼
             self.x2_var.set(x)
             self.y2_var.set(y)
         self.update_box(None)

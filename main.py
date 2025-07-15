@@ -146,7 +146,7 @@ class LabelTool:
         self.bbox = (0,0,0,0)
         self.mode = 'World'  # 'Ground' or 'World'
 
-        for key in ["<Left>", "<Right>", "<Up>", "<Down>", "a", "d", "w", "s", "W", "A", "S", "D"]:
+        for key in ["<Left>", "<Right>", "<Up>", "<Down>", "a", "d", "w", "s", "W", "A", "S", "D", "q", "e", "Q", "E"]:
             master.bind(key, self.move)
 
     def load_label_from_list(self, event):
@@ -293,6 +293,11 @@ class LabelTool:
                 self.Y_var.set(self.Y_var.get() - delta)
             elif char == "s":
                 self.Y_var.set(self.Y_var.get() + delta)
+        elif char in ["q", "e"]:
+            if char == "q":
+                self.Z_var.set(self.Z_var.get() + delta)
+            elif char == "e":
+                self.Z_var.set(self.Z_var.get() - delta)
         self.update_box(None)
 
     def on_canvas_click(self, event):
@@ -333,11 +338,7 @@ class LabelTool:
             pass
 
         if delta != 0:
-            shift_pressed = event.state & 0x0001
-            if shift_pressed:
-                self.Z_var.set(self.Z_var.get() + delta)
-            else:
-                self.ry_var.set(self.ry_var.get() + delta)
+            self.ry_var.set(self.ry_var.get() + delta)
             self.update_box(None)
             
     def delete_label(self):
